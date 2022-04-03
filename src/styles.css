@@ -1,0 +1,98 @@
+html,
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://raw.githubusercontent.com/ragavkumarv/svgs/main/back-shapes-2.svg");
+  background-size: cover;
+}
+
+/* $base-background: #00CC99; */
+body {
+  /* background: #d18b49; */
+  color: rgba(0, 0, 0, 0.6);
+
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 1.6em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: 0.5s ease;
+}
+
+.card-list {
+  padding: 0.5rem;
+  border-radius: 12px;
+  pointer-events: painted;
+  width: 1200px;
+  height: 700px;
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.card-list[data-isOn="true"] {
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+}
+
+.pill {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+
+  flex: 0 0 auto;
+}
+
+.pill > p {
+  margin: 0;
+  width: max-content;
+}
+
+.pill:nth-child(n) {
+  background-color: hsl(207deg 100% 92%);
+  color: hsl(207deg 70% 59%);
+}
+
+.pill:nth-child(2n) {
+  background-color: hsl(262deg 100% 91%);
+  color: hsl(262, 100%, 30%);
+}
+
+.pill:nth-child(3n) {
+  background-color: hsl(326deg 100% 91%);
+  color: hsl(326, 100%, 31%);
+}
+
+.pill:nth-child(4n) {
+  background-color: hsl(20deg 100% 91%);
+  color: hsl(20deg, 100%, 50%);
+}
+
+.pill:nth-child(5n) {
+  background-color: hsl(148deg, 100%, 91%);
+  color: hsl(148deg, 50%, 50%);
+}
+
+.pill:nth-child(6n) {
+  background-color: hsl(44deg 100% 91%);
+  color: hsl(44deg, 100%, 50%);
+}
+
+.pill:nth-child(7n) {
+  background-color: hsl(180deg 100% 91%);
+  color: hsl(180deg, 63%, 42%);
+}

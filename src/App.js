@@ -3,11 +3,116 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import "./styles.css";
 
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FlexRowIcon } from "./FlexRowIcon";
+import Card from "@mui/material/Card";
+
+const cards = [
+  {
+    title: "Art",
+    img: "fa-solid fa-swatchbook"
+  },
+  {
+    title: "Bussiness",
+    img: "fa-solid fa-briefcase"
+  },
+  {
+    title: "Design",
+    img: "fa-solid fa-compass-drafting"
+  },
+
+  {
+    title: "Philosophy",
+    img: "fa-solid fa-yin-yang"
+  },
+  {
+    title: "Money",
+    img: "fa-solid fa-coins"
+  },
+  {
+    title: "Love",
+    img: "fa-solid fa-heart"
+  },
+  {
+    title: "Leadership and management",
+    img: "fa-solid fa-medal"
+  },
+  {
+    title: "Religion",
+    img: "fa-solid fa-person-praying"
+  },
+  {
+    title: "Entrepreneurship",
+    img: "fa-solid fa-handshake"
+  },
+
+  {
+    title: "Health and Nutrition",
+    img: "fa-solid fa-carrot"
+  },
+  {
+    title: "Health",
+    img: "fa-solid fa-heart-circle-plus"
+  },
+  {
+    title: "Politics",
+    img: "fa-solid fa-microphone-lines"
+  },
+  {
+    title: "Marketing",
+    img: "fa-solid fa-money-bill-trend-up"
+  },
+  {
+    title: "Communication",
+    img: "fa-solid fa-satellite"
+  },
+  {
+    title: "Science",
+    img: "fa-solid fa-microscope"
+  },
+  {
+    title: "Biography",
+    img: "fa-solid fa-book-open-reader"
+  },
+  {
+    title: "Education",
+    img: "fa-solid fa-graduation-cap"
+  }
+];
 
 export default function App() {
+  const [alignment, setAlignment] = React.useState("left");
+
+  const handleAlignment = (event, newAlignment) => {
+    setAlignment(newAlignment);
+  };
   return (
     <div>
+      <section>
+        <div className="button-list">
+          <ToggleButtonGroup
+            value={alignment}
+            exclusive
+            onChange={handleAlignment}
+            aria-label="text alignment"
+          >
+            <ToggleButton value="row" aria-label="left aligned">
+              <FlexRowIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="center" aria-label="centered">
+              <FlexRowIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="right" aria-label="right aligned">
+              <FlexRowIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="justify" aria-label="justified">
+              <FlexRowIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </div>
+      </section>
       <PillList />
     </div>
   );
@@ -20,79 +125,6 @@ const spring = {
 };
 
 function PillList() {
-  const cards = [
-    {
-      title: "Art",
-      img: "fa-solid fa-swatchbook"
-    },
-    {
-      title: "Bussiness",
-      img: "fa-solid fa-briefcase"
-    },
-    {
-      title: "Design",
-      img: "fa-solid fa-compass-drafting"
-    },
-
-    {
-      title: "Philosophy",
-      img: "fa-solid fa-yin-yang"
-    },
-    {
-      title: "Money",
-      img: "fa-solid fa-coins"
-    },
-    {
-      title: "Love",
-      img: "fa-solid fa-heart"
-    },
-    {
-      title: "Leadership and management",
-      img: "fa-solid fa-medal"
-    },
-    {
-      title: "Religion",
-      img: "fa-solid fa-person-praying"
-    },
-    {
-      title: "Entrepreneurship",
-      img: "fa-solid fa-handshake"
-    },
-
-    {
-      title: "Health and Nutrition",
-      img: "fa-solid fa-carrot"
-    },
-    {
-      title: "Health",
-      img: "fa-solid fa-heart-circle-plus"
-    },
-    {
-      title: "Politics",
-      img: "fa-solid fa-microphone-lines"
-    },
-    {
-      title: "Marketing",
-      img: "fa-solid fa-money-bill-trend-up"
-    },
-    {
-      title: "Communication",
-      img: "fa-solid fa-satellite"
-    },
-    {
-      title: "Science",
-      img: "fa-solid fa-microscope"
-    },
-    {
-      title: "Biography",
-      img: "fa-solid fa-book-open-reader"
-    },
-    {
-      title: "Education",
-      img: "fa-solid fa-graduation-cap"
-    }
-  ];
-
   const [isOn, setIsOn] = useState(false);
 
   const toggleSwitch = () => setIsOn(!isOn);

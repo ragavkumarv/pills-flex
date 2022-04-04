@@ -8,6 +8,7 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FlexRowIcon } from "./FlexRowIcon";
 import Card from "@mui/material/Card";
+import { FlexColumnIcon } from "./FlexColumnIcon";
 
 const cards = [
   {
@@ -83,13 +84,13 @@ const cards = [
 ];
 
 export default function App() {
-  const [alignment, setAlignment] = React.useState("left");
+  const [alignment, setAlignment] = React.useState("row");
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
   return (
-    <div>
+    <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
       <section>
         <div className="button-list">
           <ToggleButtonGroup
@@ -101,19 +102,19 @@ export default function App() {
             <ToggleButton value="row" aria-label="left aligned">
               <FlexRowIcon color="hsl(207deg 70% 59%)" />
             </ToggleButton>
-            <ToggleButton value="center" aria-label="centered">
+            <ToggleButton value="column" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="row-reverse" aria-label="right aligned">
               <FlexRowIcon color="hsl(207deg 70% 59%)" />
             </ToggleButton>
-            <ToggleButton value="right" aria-label="right aligned">
-              <FlexRowIcon color="hsl(207deg 70% 59%)" />
-            </ToggleButton>
-            <ToggleButton value="justify" aria-label="justified">
+            <ToggleButton value="column-reverse" aria-label="justified">
               <FlexRowIcon color="hsl(207deg 70% 59%)" />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
       </section>
-      <PillList />
+      <PillList flexDirection={alignment} />
     </div>
   );
 }
@@ -124,13 +125,18 @@ const spring = {
   damping: 30
 };
 
-function PillList() {
+function PillList({ flexDirection }) {
   const [isOn, setIsOn] = useState(false);
 
   const toggleSwitch = () => setIsOn(!isOn);
 
   return (
-    <div className="card-list" data-isOn={isOn} onClick={toggleSwitch}>
+    <div
+      className="card-list"
+      style={{ flexDirection }}
+      data-isOn={isOn}
+      onClick={toggleSwitch}
+    >
       {cards.map((card) => (
         <Pill key={card.title} card={card} isOn={isOn} />
       ))}

@@ -1,10 +1,10 @@
 import React from "react";
 
-export function FlexRowIcon({ color = "currentColor" }) {
+export function FlexRowIcon({ color = "currentColor", size = 52 }) {
   return (
     <svg
-      width="52"
-      height="52"
+      width={size}
+      height={size}
       viewBox="0 0 24 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -17,6 +17,10 @@ import { FlexJCFlexEndIcon } from "./svgs/FlexJCFlexEndIcon";
 import { FlexJCSpaceAroundIcon } from "./svgs/FlexJCSpaceAroundIcon";
 import { FlexJCSpaceBetweenIcon } from "./svgs/FlexJCSpaceBetweenIcon";
 import { FlexJCSpaceEvenly } from "./svgs/FlexJCSpaceEvenly";
+import { FlexAICenter } from "./svgs/FlexAICenter";
+import { FlexAIStart } from "./svgs/FlexAIStart";
+import { FlexAIStretch } from "./svgs/FlexAIStretch";
+import { FlexAIBase } from "./svgs/FlexAIBase";
 
 const cards = [
   {
@@ -194,19 +198,29 @@ export default function App() {
             aria-label="text alignment"
           >
             <ToggleButton value="center" aria-label="centered">
-              <FlexColumnIcon />
+              <FlexAICenter
+                transform={`rotate(${rotatesJC[flexDirection]}) scale(${scales[flexWrap]}, 1)`}
+              />
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
-              <FlexColumnIcon />
+              <FlexAIStart
+                transform={`rotate(${rotatesJC[flexDirection]}) scale(${scales[flexWrap]}  , ${scales[flexWrap]})`}
+              />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
-              <FlexColumnIcon />
+              <FlexAIStart
+                transform={`rotate(${
+                  parseInt(rotatesJC[flexDirection]) + 180
+                }deg) scale(${scales[flexWrap] * -1}, ${scales[flexWrap]})`}
+              />
             </ToggleButton>
             <ToggleButton value="stretch" aria-label="centered">
-              <FlexColumnIcon />
+              <FlexAIStretch
+                transform={`rotate(${rotatesJC[flexDirection]}) scale(${scales[flexWrap]}, 1)`}
+              />
             </ToggleButton>
             <ToggleButton value="baseline" aria-label="centered">
-              <FlexColumnIcon />
+              <FlexAIBase />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
@@ -360,3 +374,5 @@ function Pill({ card, isOn }) {
     // </AnimatePresence>
   );
 }
+
+// transform={`rotate(180deg) scale(-1, 1)`}

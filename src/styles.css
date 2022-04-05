@@ -44,11 +44,6 @@ body {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.card-list[data-isOn="true"] {
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-}
-
 .pill {
   font-size: 2rem;
   padding: 1rem 2rem;
@@ -103,4 +98,12 @@ body {
   background-color: white;
   padding: 2rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.no-wrap {
+  flex-wrap: no-wrap;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }

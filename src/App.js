@@ -84,37 +84,98 @@ const cards = [
 ];
 
 export default function App() {
-  const [alignment, setAlignment] = React.useState("row");
+  const [flexDirection, setFlexDirection] = React.useState("row");
 
-  const handleAlignment = (event, newAlignment) => {
-    setAlignment(newAlignment);
-  };
+  const [flexWrap, setFlexWrap] = React.useState("nowrap");
+
+  const [alignItems, setAlignItems] = React.useState("normal");
+
   return (
     <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
-      <section>
-        <div className="button-list">
-          <ToggleButtonGroup
-            value={alignment}
-            exclusive
-            onChange={handleAlignment}
-            aria-label="text alignment"
-          >
-            <ToggleButton value="row" aria-label="left aligned">
-              <FlexRowIcon color="hsl(207deg 70% 59%)" />
-            </ToggleButton>
-            <ToggleButton value="column" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
-            </ToggleButton>
-            <ToggleButton value="row-reverse" aria-label="right aligned">
-              <FlexRowIcon color="hsl(207deg 70% 59%)" />
-            </ToggleButton>
-            <ToggleButton value="column-reverse" aria-label="justified">
-              <FlexRowIcon color="hsl(207deg 70% 59%)" />
-            </ToggleButton>
-          </ToggleButtonGroup>
-        </div>
+      <section className="button-list">
+        <h1>flex-direction: {flexDirection}</h1>
+        <ToggleButtonGroup
+          value={flexDirection}
+          exclusive
+          onChange={(event, newAlignment) => {
+            if (newAlignment !== null) {
+              setFlexDirection(newAlignment);
+            }
+          }}
+          aria-label="text alignment"
+        >
+          <ToggleButton value="row" aria-label="left aligned">
+            <FlexRowIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+          <ToggleButton value="column" aria-label="centered">
+            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+          <ToggleButton value="row-reverse" aria-label="right aligned">
+            <FlexRowIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+          <ToggleButton value="column-reverse" aria-label="justified">
+            <FlexRowIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+        </ToggleButtonGroup>
+
+        <h1>flex-wrap: {flexWrap}</h1>
+        <ToggleButtonGroup
+          value={flexWrap}
+          exclusive
+          onChange={(event, newAlignment) => {
+            if (newAlignment !== null) {
+              setFlexWrap(newAlignment);
+            }
+          }}
+          aria-label="text alignment"
+        >
+          <ToggleButton value="wrap" aria-label="left aligned">
+            <FlexRowIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+          <ToggleButton value="nowrap" aria-label="centered">
+            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+          <ToggleButton value="wrap-reverse" aria-label="centered">
+            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+        </ToggleButtonGroup>
+
+        <h1>align-items: {alignItems}</h1>
+        <ToggleButtonGroup
+          value={alignItems}
+          exclusive
+          onChange={(event, newAlignment) => {
+            if (newAlignment !== null) {
+              setAlignItems(newAlignment);
+            }
+          }}
+          aria-label="text alignment"
+        >
+          <ToggleButton value="normal" aria-label="left aligned">
+            <FlexRowIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+          <ToggleButton value="center" aria-label="centered">
+            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+          <ToggleButton value="flex-start" aria-label="centered">
+            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+          <ToggleButton value="flex-end" aria-label="centered">
+            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+          <ToggleButton value="stretch" aria-label="centered">
+            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+          <ToggleButton value="baseline" aria-label="centered">
+            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+          </ToggleButton>
+        </ToggleButtonGroup>
       </section>
-      <PillList flexDirection={alignment} />
+      <PillList
+        flexDirection={flexDirection}
+        flexWrap={flexWrap}
+        alignItems={alignItems}
+      />
     </div>
   );
 }
@@ -125,20 +186,15 @@ const spring = {
   damping: 30
 };
 
-function PillList({ flexDirection }) {
-  const [isOn, setIsOn] = useState(false);
-
-  const toggleSwitch = () => setIsOn(!isOn);
-
+function PillList({ flexDirection, flexWrap, alignItems }) {
   return (
     <div
       className="card-list"
-      style={{ flexDirection }}
-      data-isOn={isOn}
-      onClick={toggleSwitch}
+      // className={`card-list ${flexWrap}`}
+      style={{ flexDirection, alignItems, flexWrap }}
     >
       {cards.map((card) => (
-        <Pill key={card.title} card={card} isOn={isOn} />
+        <Pill key={card.title} card={card} />
       ))}
     </div>
   );

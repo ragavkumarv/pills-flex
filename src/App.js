@@ -102,6 +102,8 @@ export default function App() {
 
   const [justifyContent, setJustifyContent] = React.useState("normal");
 
+  const isRow = flexDirection.includes("row");
+
   return (
     <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
       <section className="button-list">
@@ -232,23 +234,35 @@ export default function App() {
             aria-label="text alignment"
           >
             <ToggleButton value="center" aria-label="centered">
-              <FlexJCCenterIcon transform="rotate(90deg)" />
+              <FlexJCCenterIcon
+                transform={`rotate(${isRow ? "0deg" : "90deg"})`}
+              />
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
-              <FlexJCFlexStartIcon transform="rotate(90deg)" />
+              <FlexJCFlexStartIcon
+                transform={`rotate(${isRow ? "0deg" : "90deg"})`}
+              />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
-              <FlexJCFlexStartIcon transform="rotate(270deg)" />
+              <FlexJCFlexStartIcon
+                transform={`rotate(${isRow ? "180deg" : "270deg"})`}
+              />
             </ToggleButton>
             <ToggleButton value="space-between" aria-label="centered">
-              <FlexJCSpaceBetweenIcon transform="rotate(90deg)" />
+              <FlexJCSpaceBetweenIcon
+                transform={`rotate(${isRow ? "0deg" : "90deg"})`}
+              />
             </ToggleButton>
             <ToggleButton value="space-around" aria-label="centered">
-              <FlexJCSpaceAroundIcon transform="rotate(90deg)" />
+              <FlexJCSpaceAroundIcon
+                transform={`rotate(${isRow ? "0deg" : "90deg"})`}
+              />
             </ToggleButton>
 
             <ToggleButton value="space-evenly" aria-label="centered">
-              <FlexJCSpaceEvenly transform="rotate(90deg)" />
+              <FlexJCSpaceEvenly
+                transform={`rotate(${isRow ? "0deg" : "90deg"})`}
+              />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>

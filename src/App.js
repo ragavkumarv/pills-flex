@@ -6,11 +6,11 @@ import "./styles.css";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FlexRowIcon } from "./FlexRowIcon";
+import { FlexRowIcon } from "./svgs/FlexRowIcon";
 import Card from "@mui/material/Card";
-import { FlexColumnIcon } from "./FlexColumnIcon";
-import { FlexNoWrapIcon } from "./FlexNoWrapIcon";
-import { FlexWrapIcon } from "./FlexWrapIcon";
+import { FlexColumnIcon } from "./svgs/FlexColumnIcon";
+import { FlexNoWrapIcon } from "./svgs/FlexNoWrapIcon";
+import { FlexWrapIcon } from "./svgs/FlexWrapIcon";
 
 const cards = [
   {

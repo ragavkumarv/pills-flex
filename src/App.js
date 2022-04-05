@@ -86,95 +86,173 @@ const cards = [
 export default function App() {
   const [flexDirection, setFlexDirection] = React.useState("row");
 
-  const [flexWrap, setFlexWrap] = React.useState("nowrap");
+  const [flexWrap, setFlexWrap] = React.useState("wrap");
 
   const [alignItems, setAlignItems] = React.useState("normal");
+
+  const [alignContent, setAlignContent] = React.useState("normal");
+
+  const [justifyContent, setJustifyContent] = React.useState("normal");
 
   return (
     <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
       <section className="button-list">
-        <h1>flex-direction: {flexDirection}</h1>
-        <ToggleButtonGroup
-          value={flexDirection}
-          exclusive
-          onChange={(event, newAlignment) => {
-            if (newAlignment !== null) {
-              setFlexDirection(newAlignment);
-            }
-          }}
-          aria-label="text alignment"
-        >
-          <ToggleButton value="row" aria-label="left aligned">
-            <FlexRowIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-          <ToggleButton value="column" aria-label="centered">
-            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-          <ToggleButton value="row-reverse" aria-label="right aligned">
-            <FlexRowIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-          <ToggleButton value="column-reverse" aria-label="justified">
-            <FlexRowIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-        </ToggleButtonGroup>
+        <div>
+          <h1>flex-direction: {flexDirection}</h1>
+          <ToggleButtonGroup
+            value={flexDirection}
+            exclusive
+            onChange={(event, newAlignment) => {
+              if (newAlignment !== null) {
+                setFlexDirection(newAlignment);
+              }
+            }}
+            aria-label="text alignment"
+          >
+            <ToggleButton value="row" aria-label="left aligned">
+              <FlexRowIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="column" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="row-reverse" aria-label="right aligned">
+              <FlexRowIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="column-reverse" aria-label="justified">
+              <FlexRowIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </div>
 
-        <h1>flex-wrap: {flexWrap}</h1>
-        <ToggleButtonGroup
-          value={flexWrap}
-          exclusive
-          onChange={(event, newAlignment) => {
-            if (newAlignment !== null) {
-              setFlexWrap(newAlignment);
-            }
-          }}
-          aria-label="text alignment"
-        >
-          <ToggleButton value="wrap" aria-label="left aligned">
-            <FlexRowIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-          <ToggleButton value="nowrap" aria-label="centered">
-            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-          <ToggleButton value="wrap-reverse" aria-label="centered">
-            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-        </ToggleButtonGroup>
+        <div>
+          <h1>flex-wrap: {flexWrap}</h1>
+          <ToggleButtonGroup
+            value={flexWrap}
+            exclusive
+            onChange={(event, newAlignment) => {
+              if (newAlignment !== null) {
+                setFlexWrap(newAlignment);
+              }
+            }}
+            aria-label="text alignment"
+          >
+            <ToggleButton value="wrap" aria-label="left aligned">
+              <FlexRowIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="nowrap" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="wrap-reverse" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </div>
 
-        <h1>align-items: {alignItems}</h1>
-        <ToggleButtonGroup
-          value={alignItems}
-          exclusive
-          onChange={(event, newAlignment) => {
-            if (newAlignment !== null) {
-              setAlignItems(newAlignment);
-            }
-          }}
-          aria-label="text alignment"
-        >
-          <ToggleButton value="normal" aria-label="left aligned">
-            <FlexRowIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-          <ToggleButton value="center" aria-label="centered">
-            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-          <ToggleButton value="flex-start" aria-label="centered">
-            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-          <ToggleButton value="flex-end" aria-label="centered">
-            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-          <ToggleButton value="stretch" aria-label="centered">
-            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-          <ToggleButton value="baseline" aria-label="centered">
-            <FlexColumnIcon color="hsl(207deg 70% 59%)" />
-          </ToggleButton>
-        </ToggleButtonGroup>
+        <div>
+          <h1>align-items: {alignItems}</h1>
+          <ToggleButtonGroup
+            value={alignItems}
+            exclusive
+            onChange={(event, newAlignment) => {
+              if (newAlignment !== null) {
+                setAlignItems(newAlignment);
+              }
+            }}
+            aria-label="text alignment"
+          >
+            <ToggleButton value="center" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="flex-start" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="flex-end" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="stretch" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="baseline" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </div>
+
+        <div>
+          <h1>align-content: {alignContent}</h1>
+          <ToggleButtonGroup
+            value={alignContent}
+            exclusive
+            onChange={(event, newAlignment) => {
+              if (newAlignment !== null) {
+                setAlignContent(newAlignment);
+              }
+            }}
+            aria-label="text alignment"
+          >
+            <ToggleButton value="center" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="flex-start" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="flex-end" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="stretch" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="space-around" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="space-between" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="baseline" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </div>
+
+        <div>
+          <h1>justify-content: {justifyContent}</h1>
+          <ToggleButtonGroup
+            value={justifyContent}
+            exclusive
+            onChange={(event, newAlignment) => {
+              if (newAlignment !== null) {
+                setJustifyContent(newAlignment);
+              }
+            }}
+            aria-label="text alignment"
+          >
+            <ToggleButton value="center" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="flex-start" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="flex-end" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="space-around" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="space-between" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+            <ToggleButton value="space-evenly" aria-label="centered">
+              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </div>
       </section>
       <PillList
         flexDirection={flexDirection}
         flexWrap={flexWrap}
         alignItems={alignItems}
+        alignContent={alignContent}
+        justifyContent={justifyContent}
       />
     </div>
   );
@@ -186,12 +264,24 @@ const spring = {
   damping: 30
 };
 
-function PillList({ flexDirection, flexWrap, alignItems }) {
+function PillList({
+  flexDirection,
+  flexWrap,
+  alignItems,
+  alignContent,
+  justifyContent
+}) {
   return (
     <div
       className="card-list"
       // className={`card-list ${flexWrap}`}
-      style={{ flexDirection, alignItems, flexWrap }}
+      style={{
+        flexDirection,
+        alignItems,
+        flexWrap,
+        alignContent,
+        justifyContent
+      }}
     >
       {cards.map((card) => (
         <Pill key={card.title} card={card} />

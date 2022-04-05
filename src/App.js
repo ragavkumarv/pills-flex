@@ -104,6 +104,20 @@ export default function App() {
 
   const isRow = flexDirection.includes("row");
 
+  const rotates = {
+    row: "90deg",
+    column: "0deg",
+    "column-reverse": "0deg",
+    "row-reverse": "90deg",
+  };
+
+  const scales = {
+    row: 1,
+    column: 1,
+    "column-reverse": -1,
+    "row-reverse": -1,
+  };
+
   return (
     <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
       <section className="button-list">
@@ -201,22 +215,34 @@ export default function App() {
             aria-label="text alignment"
           >
             <ToggleButton value="center" aria-label="centered">
-              <FlexJCCenterIcon />
+              <FlexJCCenterIcon
+                transform={`rotate(${rotates[flexDirection]})`}
+              />
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
-              <FlexJCFlexStartIcon />
+              <FlexJCFlexStartIcon
+                transform={`rotate(${rotates[flexDirection]}) scale(1, 1)`}
+              />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
-              <FlexJCFlexStartIcon transform="scale(-1, 1)" />
+              <FlexJCFlexStartIcon
+                transform={`rotate(${rotates[flexDirection]}) scale(-1, 1)`}
+              />
             </ToggleButton>
             <ToggleButton value="stretch" aria-label="centered">
-              <FlexJCSpaceAroundIcon />
+              <FlexJCSpaceAroundIcon
+                transform={`rotate(${rotates[flexDirection]})`}
+              />
             </ToggleButton>
             <ToggleButton value="space-around" aria-label="centered">
-              <FlexJCSpaceBetweenIcon />
+              <FlexJCSpaceBetweenIcon
+                transform={`rotate(${rotates[flexDirection]})`}
+              />
             </ToggleButton>
             <ToggleButton value="space-between" aria-label="centered">
-              <FlexJCSpaceEvenly />
+              <FlexJCSpaceEvenly
+                transform={`rotate(${rotates[flexDirection]})`}
+              />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
@@ -240,12 +266,16 @@ export default function App() {
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
               <FlexJCFlexStartIcon
-                transform={`rotate(${isRow ? "0deg" : "90deg"})`}
+                transform={`rotate(${isRow ? "0deg" : "90deg"}) scale(${
+                  scales[flexDirection]
+                }, 1)`}
               />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
               <FlexJCFlexStartIcon
-                transform={`rotate(${isRow ? "180deg" : "270deg"})`}
+                transform={`rotate(${isRow ? "0deg" : "90deg"}) scale(${
+                  scales[flexDirection] * -1
+                }, 1)`}
               />
             </ToggleButton>
             <ToggleButton value="space-between" aria-label="centered">

@@ -105,4 +105,5 @@ body {
 
 .button-list svg {
   color: hsl(262deg 100% 30%);
+  transition: 0.2s all ease-in-out;
 }

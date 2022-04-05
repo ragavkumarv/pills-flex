@@ -1,9 +1,13 @@
 import React from "react";
 
-export function FlexColumnIcon({ color = "currentColor", size = 52 }) {
+export function FlexColumnIcon({
+  color = "currentColor",
+  size = 52,
+  transform
+}) {
   return (
     <svg
-      style={{ transform: "rotate(180deg) scale(-1, 1)" }}
+      style={{ transform }}
       width={size}
       height={size}
       viewBox="0 0 26 26"

@@ -1,8 +1,9 @@
 import React from "react";
 
-export function FlexRowIcon({ color = "currentColor", size = 52 }) {
+export function FlexRowIcon({ color = "currentColor", size = 52, transform }) {
   return (
     <svg
+      style={{ transform }}
       width={size}
       height={size}
       viewBox="0 0 24 28"

@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FlexRowIcon } from "./FlexRowIcon";
 import Card from "@mui/material/Card";
 import { FlexColumnIcon } from "./FlexColumnIcon";
+import { FlexNoWrapIcon } from "./FlexNoWrapIcon";
+import { FlexWrapIcon } from "./FlexWrapIcon";
 
 const cards = [
   {
@@ -116,10 +118,16 @@ export default function App() {
               <FlexColumnIcon color="hsl(207deg 70% 59%)" />
             </ToggleButton>
             <ToggleButton value="row-reverse" aria-label="right aligned">
-              <FlexRowIcon color="hsl(207deg 70% 59%)" />
+              <FlexRowIcon
+                color="hsl(207deg 70% 59%)"
+                transform="scale(-1, 1)"
+              />
             </ToggleButton>
             <ToggleButton value="column-reverse" aria-label="justified">
-              <FlexRowIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon
+                color="hsl(207deg 70% 59%)"
+                transform="rotate(180deg) scale(-1, 1)"
+              />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
@@ -136,14 +144,17 @@ export default function App() {
             }}
             aria-label="text alignment"
           >
-            <ToggleButton value="wrap" aria-label="left aligned">
-              <FlexRowIcon color="hsl(207deg 70% 59%)" />
+            <ToggleButton value="nowrap" aria-label="left aligned">
+              <FlexNoWrapIcon color="hsl(207deg 70% 59%)" />
             </ToggleButton>
-            <ToggleButton value="nowrap" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+            <ToggleButton value="wrap" aria-label="centered">
+              <FlexWrapIcon color="hsl(207deg 70% 59%)" />
             </ToggleButton>
             <ToggleButton value="wrap-reverse" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexWrapIcon
+                color="hsl(207deg 70% 59%)"
+                transform="rotate(180deg) scale(-1, 1)"
+              />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>

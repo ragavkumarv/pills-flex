@@ -111,11 +111,20 @@ export default function App() {
     "row-reverse": "90deg",
   };
 
+  const rotatesJC = {
+    row: "0deg",
+    column: "90deg",
+    "column-reverse": "90deg",
+    "row-reverse": "0deg",
+  };
+
   const scales = {
     row: 1,
     column: 1,
     "column-reverse": -1,
     "row-reverse": -1,
+    wrap: 1,
+    "wrap-reverse": -1,
   };
 
   return (
@@ -221,12 +230,14 @@ export default function App() {
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
               <FlexJCFlexStartIcon
-                transform={`rotate(${rotates[flexDirection]}) scale(1, 1)`}
+                transform={`rotate(${rotates[flexDirection]}) scale(${scales[flexWrap]}, 1)`}
               />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
               <FlexJCFlexStartIcon
-                transform={`rotate(${rotates[flexDirection]}) scale(-1, 1)`}
+                transform={`rotate(${rotates[flexDirection]}) scale(${
+                  scales[flexWrap] * -1
+                }, 1)`}
               />
             </ToggleButton>
             <ToggleButton value="stretch" aria-label="centered">
@@ -261,37 +272,35 @@ export default function App() {
           >
             <ToggleButton value="center" aria-label="centered">
               <FlexJCCenterIcon
-                transform={`rotate(${isRow ? "0deg" : "90deg"})`}
+                transform={`rotate(${rotatesJC[flexDirection]})`}
               />
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
               <FlexJCFlexStartIcon
-                transform={`rotate(${isRow ? "0deg" : "90deg"}) scale(${
-                  scales[flexDirection]
-                }, 1)`}
+                transform={`rotate(${rotatesJC[flexDirection]}) scale(${scales[flexDirection]}, 1)`}
               />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
               <FlexJCFlexStartIcon
-                transform={`rotate(${isRow ? "0deg" : "90deg"}) scale(${
+                transform={`rotate(${rotatesJC[flexDirection]}) scale(${
                   scales[flexDirection] * -1
                 }, 1)`}
               />
             </ToggleButton>
             <ToggleButton value="space-between" aria-label="centered">
               <FlexJCSpaceBetweenIcon
-                transform={`rotate(${isRow ? "0deg" : "90deg"})`}
+                transform={`rotate(${rotatesJC[flexDirection]})`}
               />
             </ToggleButton>
             <ToggleButton value="space-around" aria-label="centered">
               <FlexJCSpaceAroundIcon
-                transform={`rotate(${isRow ? "0deg" : "90deg"})`}
+                transform={`rotate(${rotatesJC[flexDirection]})`}
               />
             </ToggleButton>
 
             <ToggleButton value="space-evenly" aria-label="centered">
               <FlexJCSpaceEvenly
-                transform={`rotate(${isRow ? "0deg" : "90deg"})`}
+                transform={`rotate(${rotatesJC[flexDirection]})`}
               />
             </ToggleButton>
           </ToggleButtonGroup>

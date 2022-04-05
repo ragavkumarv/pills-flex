@@ -11,78 +11,84 @@ import Card from "@mui/material/Card";
 import { FlexColumnIcon } from "./svgs/FlexColumnIcon";
 import { FlexNoWrapIcon } from "./svgs/FlexNoWrapIcon";
 import { FlexWrapIcon } from "./svgs/FlexWrapIcon";
+import { FlexJCCenterIcon } from "./svgs/FlexJCCenterIcon";
+import { FlexJCFlexStartIcon } from "./svgs/FlexJCFlexStartIcon";
+import { FlexJCFlexEndIcon } from "./svgs/FlexJCFlexEndIcon";
+import { FlexJCSpaceAroundIcon } from "./svgs/FlexJCSpaceAroundIcon";
+import { FlexJCSpaceBetweenIcon } from "./svgs/FlexJCSpaceBetweenIcon";
+import { FlexJCSpaceEvenly } from "./svgs/FlexJCSpaceEvenly";
 
 const cards = [
   {
     title: "Art",
-    img: "fa-solid fa-swatchbook"
+    img: "fa-solid fa-swatchbook",
   },
   {
     title: "Bussiness",
-    img: "fa-solid fa-briefcase"
+    img: "fa-solid fa-briefcase",
   },
   {
     title: "Design",
-    img: "fa-solid fa-compass-drafting"
+    img: "fa-solid fa-compass-drafting",
   },
 
   {
     title: "Philosophy",
-    img: "fa-solid fa-yin-yang"
+    img: "fa-solid fa-yin-yang",
   },
   {
     title: "Money",
-    img: "fa-solid fa-coins"
+    img: "fa-solid fa-coins",
   },
   {
     title: "Love",
-    img: "fa-solid fa-heart"
+    img: "fa-solid fa-heart",
   },
   {
     title: "Leadership and management",
-    img: "fa-solid fa-medal"
+    img: "fa-solid fa-medal",
   },
   {
     title: "Religion",
-    img: "fa-solid fa-person-praying"
+    img: "fa-solid fa-person-praying",
   },
   {
     title: "Entrepreneurship",
-    img: "fa-solid fa-handshake"
+    img: "fa-solid fa-handshake",
   },
 
   {
     title: "Health and Nutrition",
-    img: "fa-solid fa-carrot"
+    img: "fa-solid fa-carrot",
   },
   {
     title: "Health",
-    img: "fa-solid fa-heart-circle-plus"
+    img: "fa-solid fa-heart-circle-plus",
   },
   {
     title: "Politics",
-    img: "fa-solid fa-microphone-lines"
+    img: "fa-solid fa-microphone-lines",
   },
   {
     title: "Marketing",
-    img: "fa-solid fa-money-bill-trend-up"
+    img: "fa-solid fa-money-bill-trend-up",
   },
   {
     title: "Communication",
-    img: "fa-solid fa-satellite"
+    img: "fa-solid fa-satellite",
   },
   {
     title: "Science",
-    img: "fa-solid fa-microscope"
+    img: "fa-solid fa-microscope",
   },
   {
     title: "Biography",
-    img: "fa-solid fa-book-open-reader"
+    img: "fa-solid fa-book-open-reader",
   },
   {
     title: "Education",
-    img: "fa-solid fa-graduation-cap"
-  }
+    img: "fa-solid fa-graduation-cap",
+  },
 ];
 
 export default function App() {
@@ -238,22 +244,25 @@ export default function App() {
             aria-label="text alignment"
           >
             <ToggleButton value="center" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexJCCenterIcon color="hsl(207deg 70% 59%)" />
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexJCFlexStartIcon color="hsl(207deg 70% 59%)" />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexJCFlexStartIcon
+                transform="scale(-1, 1)"
+                color="hsl(207deg 70% 59%)"
+              />
             </ToggleButton>
             <ToggleButton value="space-around" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexJCSpaceAroundIcon color="hsl(207deg 70% 59%)" />
             </ToggleButton>
             <ToggleButton value="space-between" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexJCSpaceBetweenIcon color="hsl(207deg 70% 59%)" />
             </ToggleButton>
             <ToggleButton value="space-evenly" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexJCSpaceEvenly color="hsl(207deg 70% 59%)" />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
@@ -272,7 +281,7 @@ export default function App() {
 const spring = {
   type: "spring",
   stiffness: 300,
-  damping: 30
+  damping: 30,
 };
 
 function PillList({
@@ -280,7 +289,7 @@ function PillList({
   flexWrap,
   alignItems,
   alignContent,
-  justifyContent
+  justifyContent,
 }) {
   return (
     <div
@@ -291,7 +300,7 @@ function PillList({
         alignItems,
         flexWrap,
         alignContent,
-        justifyContent
+        justifyContent,
       }}
     >
       {cards.map((card) => (

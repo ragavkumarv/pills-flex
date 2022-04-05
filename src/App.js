@@ -199,25 +199,22 @@ export default function App() {
             aria-label="text alignment"
           >
             <ToggleButton value="center" aria-label="centered">
-              <FlexColumnIcon />
+              <FlexJCCenterIcon />
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
-              <FlexColumnIcon />
+              <FlexJCFlexStartIcon />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
-              <FlexColumnIcon />
+              <FlexJCFlexStartIcon transform="scale(-1, 1)" />
             </ToggleButton>
             <ToggleButton value="stretch" aria-label="centered">
-              <FlexColumnIcon />
+              <FlexJCSpaceAroundIcon />
             </ToggleButton>
             <ToggleButton value="space-around" aria-label="centered">
-              <FlexColumnIcon />
+              <FlexJCSpaceBetweenIcon />
             </ToggleButton>
             <ToggleButton value="space-between" aria-label="centered">
-              <FlexColumnIcon />
-            </ToggleButton>
-            <ToggleButton value="baseline" aria-label="centered">
-              <FlexColumnIcon />
+              <FlexJCSpaceEvenly />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
@@ -235,22 +232,23 @@ export default function App() {
             aria-label="text alignment"
           >
             <ToggleButton value="center" aria-label="centered">
-              <FlexJCCenterIcon />
+              <FlexJCCenterIcon transform="rotate(90deg)" />
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
-              <FlexJCFlexStartIcon />
+              <FlexJCFlexStartIcon transform="rotate(90deg)" />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
-              <FlexJCFlexStartIcon transform="scale(-1, 1)" />
-            </ToggleButton>
-            <ToggleButton value="space-around" aria-label="centered">
-              <FlexJCSpaceAroundIcon />
+              <FlexJCFlexStartIcon transform="rotate(270deg)" />
             </ToggleButton>
             <ToggleButton value="space-between" aria-label="centered">
-              <FlexJCSpaceBetweenIcon />
+              <FlexJCSpaceBetweenIcon transform="rotate(90deg)" />
             </ToggleButton>
+            <ToggleButton value="space-around" aria-label="centered">
+              <FlexJCSpaceAroundIcon transform="rotate(90deg)" />
+            </ToggleButton>
+
             <ToggleButton value="space-evenly" aria-label="centered">
-              <FlexJCSpaceEvenly />
+              <FlexJCSpaceEvenly transform="rotate(90deg)" />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>

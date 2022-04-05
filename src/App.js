@@ -131,6 +131,15 @@ export default function App() {
     "wrap-reverse": -1,
   };
 
+  const scalesAI = {
+    row: 1,
+    column: -1,
+    "column-reverse": -1,
+    "row-reverse": 1,
+    wrap: 1,
+    "wrap-reverse": -1,
+  };
+
   return (
     <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
       <section className="button-list">
@@ -199,19 +208,21 @@ export default function App() {
           >
             <ToggleButton value="center" aria-label="centered">
               <FlexAICenter
-                transform={`rotate(${rotatesJC[flexDirection]}) scale(${scales[flexWrap]}, 1)`}
+                transform={`rotate(${rotatesJC[flexDirection]}) scale(${scales[flexWrap]} , 1)`}
               />
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
               <FlexAIStart
-                transform={`rotate(${rotatesJC[flexDirection]}) scale(${scales[flexWrap]}  , ${scales[flexWrap]})`}
+                transform={`rotate(${rotatesJC[flexDirection]}) scale(1,${
+                  scalesAI[flexDirection] * scalesAI[flexWrap]
+                })`}
               />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
               <FlexAIStart
-                transform={`rotate(${
-                  parseInt(rotatesJC[flexDirection]) + 180
-                }deg) scale(${scales[flexWrap] * -1}, ${scales[flexWrap]})`}
+                transform={`rotate(${rotatesJC[flexDirection]}) scale(1, ${
+                  scalesAI[flexDirection] * -1 * scalesAI[flexWrap]
+                })`}
               />
             </ToggleButton>
             <ToggleButton value="stretch" aria-label="centered">
@@ -376,3 +387,7 @@ function Pill({ card, isOn }) {
 }
 
 // transform={`rotate(180deg) scale(-1, 1)`}
+
+// scale(${
+//   scales[flexWrap]
+// } , ${scales[flexWrap] * scalesAI[flexDirection]})`

@@ -118,22 +118,16 @@ export default function App() {
             aria-label="text alignment"
           >
             <ToggleButton value="row" aria-label="left aligned">
-              <FlexRowIcon color="hsl(207deg 70% 59%)" />
+              <FlexRowIcon />
             </ToggleButton>
             <ToggleButton value="column" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
             <ToggleButton value="row-reverse" aria-label="right aligned">
-              <FlexRowIcon
-                color="hsl(207deg 70% 59%)"
-                transform="scale(-1, 1)"
-              />
+              <FlexRowIcon transform="scale(-1, 1)" />
             </ToggleButton>
             <ToggleButton value="column-reverse" aria-label="justified">
-              <FlexColumnIcon
-                color="hsl(207deg 70% 59%)"
-                transform="rotate(180deg) scale(-1, 1)"
-              />
+              <FlexColumnIcon transform="rotate(180deg) scale(-1, 1)" />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
@@ -151,16 +145,13 @@ export default function App() {
             aria-label="text alignment"
           >
             <ToggleButton value="nowrap" aria-label="left aligned">
-              <FlexNoWrapIcon color="hsl(207deg 70% 59%)" />
+              <FlexNoWrapIcon />
             </ToggleButton>
             <ToggleButton value="wrap" aria-label="centered">
-              <FlexWrapIcon color="hsl(207deg 70% 59%)" />
+              <FlexWrapIcon />
             </ToggleButton>
             <ToggleButton value="wrap-reverse" aria-label="centered">
-              <FlexWrapIcon
-                color="hsl(207deg 70% 59%)"
-                transform="rotate(180deg) scale(-1, 1)"
-              />
+              <FlexWrapIcon transform="rotate(180deg) scale(-1, 1)" />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
@@ -178,19 +169,19 @@ export default function App() {
             aria-label="text alignment"
           >
             <ToggleButton value="center" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
             <ToggleButton value="stretch" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
             <ToggleButton value="baseline" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
@@ -208,25 +199,25 @@ export default function App() {
             aria-label="text alignment"
           >
             <ToggleButton value="center" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
             <ToggleButton value="stretch" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
             <ToggleButton value="space-around" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
             <ToggleButton value="space-between" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
             <ToggleButton value="baseline" aria-label="centered">
-              <FlexColumnIcon color="hsl(207deg 70% 59%)" />
+              <FlexColumnIcon />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
@@ -244,25 +235,22 @@ export default function App() {
             aria-label="text alignment"
           >
             <ToggleButton value="center" aria-label="centered">
-              <FlexJCCenterIcon color="hsl(207deg 70% 59%)" />
+              <FlexJCCenterIcon />
             </ToggleButton>
             <ToggleButton value="flex-start" aria-label="centered">
-              <FlexJCFlexStartIcon color="hsl(207deg 70% 59%)" />
+              <FlexJCFlexStartIcon />
             </ToggleButton>
             <ToggleButton value="flex-end" aria-label="centered">
-              <FlexJCFlexStartIcon
-                transform="scale(-1, 1)"
-                color="hsl(207deg 70% 59%)"
-              />
+              <FlexJCFlexStartIcon transform="scale(-1, 1)" />
             </ToggleButton>
             <ToggleButton value="space-around" aria-label="centered">
-              <FlexJCSpaceAroundIcon color="hsl(207deg 70% 59%)" />
+              <FlexJCSpaceAroundIcon />
             </ToggleButton>
             <ToggleButton value="space-between" aria-label="centered">
-              <FlexJCSpaceBetweenIcon color="hsl(207deg 70% 59%)" />
+              <FlexJCSpaceBetweenIcon />
             </ToggleButton>
             <ToggleButton value="space-evenly" aria-label="centered">
-              <FlexJCSpaceEvenly color="hsl(207deg 70% 59%)" />
+              <FlexJCSpaceEvenly />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>

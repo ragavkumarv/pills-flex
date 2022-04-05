@@ -102,3 +102,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+.button-list svg {
+  color: hsl(262deg 100% 30%);
+}

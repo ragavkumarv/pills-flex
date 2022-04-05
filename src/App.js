@@ -21,6 +21,7 @@ import { FlexAICenter } from "./svgs/FlexAICenter";
 import { FlexAIStart } from "./svgs/FlexAIStart";
 import { FlexAIStretch } from "./svgs/FlexAIStretch";
 import { FlexAIBase } from "./svgs/FlexAIBase";
+import { FlexJCStretchIcon } from "./svgs/FlexJCStretchIcon";
 
 const cards = [
   {
@@ -266,7 +267,7 @@ export default function App() {
               />
             </ToggleButton>
             <ToggleButton value="stretch" aria-label="centered">
-              <FlexJCSpaceAroundIcon
+              <FlexJCStretchIcon
                 transform={`rotate(${rotates[flexDirection]})`}
               />
             </ToggleButton>
